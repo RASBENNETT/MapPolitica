@@ -1,0 +1,16 @@
+import * as React from "react";
+
+function SvgBgr(props) {
+  return (
+    <svg viewBox="0 0 26 16" fill="none" {...props}>
+      <path
+        id="BGR"
+        d="M12.5 4L14 3.5L15 2.5L16.5 2L17.5 1.5L19 1L20 0.5L21 1L22 0.5L24 2.5L25.5 3L26 2.5V4V5.5L25 5L24 5.5L23.5 6V7V8L22.5 9L22 10L21.5 10.5H22L22.5 11L23 11.5L23.5 13H21.5L20 12.5H19H18L17.5 13V13.5H17L16 13L15.5 13.5L16 14V15L15.5 15.5L15 16H13H12.5L11.5 15.5L11 16L10.5 15H10L9.5 15.5L8.5 15L7.5 15.5H7L6 16L5 15.5L4 16L3.5 15.5V15L2.5 14.5V14L3 13.5L2.5 13L1.5 12.5L0.5 11H1L1.5 9.5L1 8.5L1.5 7.5L2.5 7L3 6L2.5 5.5L1.5 5L0.5 4V2.5L1 1L1.5 0H3L3.5 1L2.5 1.5L3 2.5H5.5L8.5 3L12.5 4Z"
+        fill="#FFD990"
+        fillOpacity={0.9}
+      />
+    </svg>
+  );
+}
+
+export default SvgBgr;

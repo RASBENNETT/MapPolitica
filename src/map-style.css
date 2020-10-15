@@ -1,0 +1,49 @@
+body{
+    background: aquamarine;
+    font-family: 'Jura', sans-serif;
+}
+
+path:hover, g:hover{
+    fill: gold;
+    opacity: 100%;
+    fill-opacity: 100%;
+}
+
+
+.modal{
+    position: fixed;
+    top: 1.5vh;
+    left: 74vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 93vh;
+    width: 25vw;
+    padding-top: 3vh;
+    font-size: 1.5em;
+    background-color: ivory;
+    border-radius: 1vh;
+}
+
+.close-modal-button{
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
+    left: 92%;
+    top: 1%;
+    fill: darkgrey;
+}
+
+.close-modal-button:hover{
+    fill: red;
+}
+
+.modal-svg{
+    max-height: 19vh;
+    max-width: 23vw;
+}
+
+.modal-flag{
+    width: 20vw;
+    height: 20vh;
+}
