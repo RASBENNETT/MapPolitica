@@ -5,12 +5,12 @@ body{
 
 path{
     transition: cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+    fill-opacity: 100%;
 }
 
 path:hover, g:hover{
     fill: gold;
     opacity: 100%;
-    fill-opacity: 100%;
 }
 
 
