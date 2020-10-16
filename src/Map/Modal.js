@@ -1,32 +1,43 @@
 import React from "react"
 import "../map-style.css"
-import SvgMap from "../CountryComponents/Map.js"
-import * as svgies from "../CountryComponents/index.js"
-import CloseButtonSvg from "../CountryComponents/CloseButton"
-
+import * as svgs from "../CountryComponents/index.js"
+import CloseButtonSvgOn from "../CountryComponents/CloseButtonOn"
+import CloseButtonSvgOff from "../CountryComponents/CloseButtonOff"
 
 const Modal = ({info, setSelectedCountry}) => {
 
-    // const svgs = SvgMap().props.children.props.children
-    // let selectedSvg = null
     let Svg = null
+    let currencies = null
+    let languages = null
     if (info) {
         const [fst, ...rest] = info.alpha3Code
         const correctedCode = [fst, rest.join('').toLowerCase()].join('')
-        console.log(correctedCode);
-        
-        Svg = svgies[correctedCode]
-        console.log(Svg);
-        // selectedSvg = svgs.find(svg => svg.props.id === info.alpha3Code)
+        Svg = svgs[correctedCode]
+
+        currencies = info.currencies.map(currency => {
+             return (
+                 <div>
+                     <div>currency: {currency.name}</div>
+                     <div>symbol: {currency.symbol}</div>
+                 </div>
+             )
+        })
+
+        languages = info.languages.map(language => {
+            return (
+                <div>
+                    <span>{language.name} </span>
+                    <span> ({ language.nativeName })</span>
+                </div>
+            )
+        })
     }
-    // console.log(selectedSvg);
 
     return (
         info ? 
         <div className="modal">
 
-            <Svg height="19vh" width="23vw" fill="black"></Svg>
-
+            <Svg height="8vh" width="14vw" fill="black"></Svg>
 
             <div className="info-bit">
                 Name : {info.name}
@@ -34,6 +45,12 @@ const Modal = ({info, setSelectedCountry}) => {
 
             <div>
                 Native Name : {info.nativeName}
+            </div>
+            <div>
+                Region : {info.region}
+            </div>
+            <div>
+                Area (m2) : {info.area}
             </div>
 
             <div className="info-bit">
@@ -44,9 +61,21 @@ const Modal = ({info, setSelectedCountry}) => {
                 Population : {info.population}
             </div>
 
+            <div className="info-bit">
+                {currencies}
+            </div>
+
+            <div>
+                Language(s) : {languages}
+            </div>
+
+            <div>
+                Top level domain : {info.topLevelDomain[0]}
+            </div>
+
             <img src={info.flag} alt="Flag" className="modal-flag"/>
 
-            <CloseButtonSvg onClick={() => setSelectedCountry(null)} className="close-modal-button"></CloseButtonSvg>
+            <CloseButtonSvgOff onClick={() => setSelectedCountry(null)} className="close-modal-button"></CloseButtonSvgOff>
             {/* <button onClick={() => setSelectedCountry(null)} className="close-modal-button"></button> */}
         </div>
         : null

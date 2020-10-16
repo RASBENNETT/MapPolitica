@@ -3,6 +3,10 @@ body{
     font-family: 'Jura', sans-serif;
 }
 
+path{
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+}
+
 path:hover, g:hover{
     fill: gold;
     opacity: 100%;
@@ -17,24 +21,27 @@ path:hover, g:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     height: 93vh;
     width: 25vw;
     padding-top: 3vh;
     font-size: 1.5em;
     background-color: ivory;
     border-radius: 1vh;
+    overflow-y: scroll;
 }
 
 .close-modal-button{
     position: absolute;
     width: 3vh;
     height: 3vh;
-    left: 92%;
+    left: 90%;
     top: 1%;
     fill: darkgrey;
+    transition: linear 0.4s;
 }
 
-.close-modal-button:hover{
+.close-modal-button:hover, .close-modal-button path:hover{
     fill: red;
 }
 
